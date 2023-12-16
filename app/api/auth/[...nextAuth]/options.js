@@ -21,8 +21,8 @@ export const options = {
         GoogleProvider({
             profile(profile){
                 console.log("Profil Google :",profile)
-
                 
+                let userRole = "Google User"
                 return {
                     ...profile,
                     id: profile.sub,
