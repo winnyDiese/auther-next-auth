@@ -7,7 +7,7 @@ const Member = () => {
     const {data: session } = useSession({
         required: true,
         onUnauthenticated(){
-            redirect("/api/auth/signin?callbackUrl=/ClientMamber")
+            redirect("/api/auth/signin?callbackUrl=/ClientMember")
         }
     })
 
