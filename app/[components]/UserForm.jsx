@@ -1,9 +1,9 @@
 "use client"
 
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
-const UserFrom = () => {
+const UserForm = () => {
     const router = useRouter()
     const [formData, setFormData] = useState({})
     const [errorMessage, setErrorMessage] = useState("")
@@ -48,6 +48,7 @@ const UserFrom = () => {
                     onChange={handleChange} 
                     require={true} 
                     value={formData.name} 
+                    className='m-2 bg-slate-400 rounded'
                 />
 
                 <label htmlFor="">Email</label>
@@ -85,4 +86,4 @@ const UserFrom = () => {
     );
 }
 
-export default UserFrom;
+export default UserForm
