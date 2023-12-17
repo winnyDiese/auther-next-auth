@@ -10,7 +10,7 @@ const UserForm = () => {
 
     const handleChange = e => {
         const value = e.target.value
-        const name = e.target.value
+        const name = e.target.name
 
         setFormData((prevState)=>({
             ...prevState,

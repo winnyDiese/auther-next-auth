@@ -7,13 +7,15 @@ export async function POST(req){
         const body = await req.json()
         const userData = body.formData
 
+        console.log('userData : ', userData)
+
         // Confirm data exist
-        if(!userData?.email || !userData.password){
+        if(!userData?.email || !userData?.password){
             return NextResponse.json({message:"All fields are require"},{status:400})
         }
-
+        
         // Check for duplicated email
-        const duplicated = await User.findOne({email:userData.email}).learn().exec()
+        const duplicated = await User.findOne({email:userData.email}).lean().exec()
 
         if(duplicated){
             return NextResponse.json({message: "Duplicated email !"},{status:409})

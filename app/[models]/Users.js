@@ -2,6 +2,7 @@ import mongoose, { Schema } from "mongoose"
 
 mongoose.connect(process.env.MONGODB_URI)
 mongoose.Prommise = global.Promise
+console.log("MongoDb connected !")
 
 const userSchema = new Schema({
     name: String,
